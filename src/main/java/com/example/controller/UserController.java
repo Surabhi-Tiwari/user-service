@@ -17,35 +17,35 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // CREATE
+    // Create
     @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User savedUser = userService.saveUser(user);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
-    // GET ALL USERS
+    // Get all users
     @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> list = userService.getAllUser();
         return ResponseEntity.ok(list);
     }
 
-    // GET BY ID
+    // Get by id
     @GetMapping("/get/{userId}")
     public ResponseEntity<User> getUserById(@PathVariable String userId) {
         User user = userService.getByIdUser(userId);
         return ResponseEntity.ok(user);
     }
 
-    // DELETE
+    // Delete
     @DeleteMapping("/delete/{userId}")
     public ResponseEntity<String> deleteUser(@PathVariable String userId) {
         userService.deleteByUserId(userId);
         return ResponseEntity.ok("User deleted successfully");
     }
 
-    // UPDATE
+    // Update
     @PutMapping("/update/{userId}")
     public ResponseEntity<User> updateUser(@PathVariable String userId, @RequestBody User user) {
         User updated = userService.updateUser(userId, user);
