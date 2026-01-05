@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 
         ApiResponse response = new ApiResponse(
                 ex.getMessage(),
-                false,                         // success = false
+                false,                         
                 HttpStatus.NOT_FOUND
         );
 
