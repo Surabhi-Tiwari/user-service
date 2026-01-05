@@ -24,7 +24,7 @@ public class Ratings {
         this.feedback = feedback;
     }
 
-    // getters & setters
+    
     public String getRatingId() {
         return ratingId;
     }
